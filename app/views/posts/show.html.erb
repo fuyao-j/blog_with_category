@@ -12,7 +12,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @post.category_id %>
+  <%= link_to Category.find(@post.category_id).name, category_path(@post.category_id) %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

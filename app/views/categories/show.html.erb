@@ -9,6 +9,10 @@
   <strong>Desc:</strong>
   <%= @category.desc %>
 </p>
-
+<ul>
+<% Post.where(category_id: @category.id).each do |post| %>
+    <li><%= link_to post.name, post_path(post.id) %></li>
+<% end %>
+</ul>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
