@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+В проекте используется Ruby 2.3.5, Rails 5.2.2, MySql
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Были сложности с полиморфными связями в БД. Так же разбирался как работает Action Cable и CoffeScript.
+В задаче не использовал React, Redux, React-router и Responsive front-end component library, так как не знаком с этими библиотеками.
