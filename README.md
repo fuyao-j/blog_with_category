@@ -4,3 +4,4 @@
 
 Были сложности с полиморфными связями в БД. Так же разбирался как работает Action Cable и CoffeScript.
 В задаче не использовал React, Redux, React-router и Responsive front-end component library, так как не знаком с этими библиотеками.
+Запускать в development среде.
