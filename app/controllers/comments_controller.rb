@@ -25,6 +25,8 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.parent_id = params[:parent_id]
+    @comment.parent_type = params[:parent_type]
 
     respond_to do |format|
       if @comment.save

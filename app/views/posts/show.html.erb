@@ -15,5 +15,14 @@
   <%= link_to Category.find(@post.category_id).name, category_path(@post.category_id) %>
 </p>
 
+
+<div class="comments-wrapper">
+  <div class="comments-body" id="messages">
+    <% if @post.comments.any? %>
+      <%= render partial: 'comments/comment', collection: @post.comments%>
+    <%end%>
+  </div>
+  <%= render partial: 'comments/form' %>
+</div>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

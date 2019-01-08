@@ -10,6 +10,9 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comment = Comment.new
+    @parent_id = @post.id
+    @parent_type = 'post'
   end
 
   # GET /posts/new
