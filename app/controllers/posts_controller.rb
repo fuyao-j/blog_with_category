@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @parent_id = @post.id
-    @parent_type = 'post'
+    @parent_type = 'Post'
   end
 
   # GET /posts/new

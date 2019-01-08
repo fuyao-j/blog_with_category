@@ -1,3 +1,5 @@
+<%= content_for(:head_attributes) do %>data-visit-id="<%= @parent_id %>"<% end %>
+<%= content_for(:head_attributes) do %>data-visit-type="<%= @parent_type %>"<% end %>
 <p id="notice"><%= notice %></p>
 
 <p>

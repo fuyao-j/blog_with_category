@@ -10,6 +10,9 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @comment = Comment.new
+    @parent_id = @category.id
+    @parent_type = 'category'
   end
 
   # GET /categories/new
