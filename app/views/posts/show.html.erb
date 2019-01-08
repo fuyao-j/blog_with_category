@@ -19,7 +19,7 @@
 
 
 <div class="comments-wrapper">
-  <div class="comments-body" id="messages">
+  <div class="comments-body" id="comments">
     <% if @post.comments.any? %>
       <%= render partial: 'comments/comment', collection: @post.comments%>
     <%end%>

@@ -25,18 +25,14 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    if @comment.parent_type=='Post'
+      @stream = Post.find(@comment.parent_id)
+    else
+      @stream = Category.find(@comment.parent_id)
+    end
 
-    respond_to do |format|
-
-      if @comment.save
-      ActionCable.server.broadcast 'messages',
-                                     message: message.content,
-                                     user: message.user.username
-        head :ok
-      else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.save
+      CommentsChannel.broadcast_to(@stream, @comment)
     end
   end
 
