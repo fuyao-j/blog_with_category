@@ -1,3 +1,5 @@
+<%= content_for(:head_attributes) do %>data-visit-id="<%= @parent_id %>"<% end %>
+<%= content_for(:head_attributes) do %>data-visit-type="<%= @parent_type %>"<% end %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -14,5 +16,14 @@
     <li><%= link_to post.name, post_path(post.id) %></li>
 <% end %>
 </ul>
+
+<div class="comments-wrapper">
+  <div class="comments-body" id="comments">
+    <% if @category.comments.any? %>
+      <%= render partial: 'comments/comment', collection: @category.comments%>
+    <%end%>
+  </div>
+  <%= render partial: 'comments/form' %>
+</div>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

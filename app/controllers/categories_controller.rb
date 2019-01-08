@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   def show
     @comment = Comment.new
     @parent_id = @category.id
-    @parent_type = 'category'
+    @parent_type = 'Category'
   end
 
   # GET /categories/new
